@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter Combination Translator</title>
+  <script>
+    function customTranslate() {
+      var userInput = document.getElementById("userInput").value;
+
+      var reverseReplacements = [
+        ["epo", "eer"],
+        ["oun", "in"],
+        ["elto", "ere"],
+        ["eglo", "ear"],
+        ["zj", "tw"],
+        ["ijten", "ibe"],
+        ["eptz", "ace"],
+        ["epo", "arm"],
+        ["itt", "rce"],
+        ["itt", "rse"],
+        ["irr", "igh"],
+        ["ïch", "ike"],
+        ["iln", "ous"],
+        ["onach", "ard"],
+        ["augh", "ude"],
+        ["pf", "f"],
+        ["urter", "or"],
+        ["oore", "ame"],
+        ["auch", "oul"],
+        ["njot", "nce"],
+        ["jott", "ine"],
+        ["ault", "old"],
+        ["prau", "ble"],
+        ["ght", "rur"],
+        ["eijm", "ome"],
+        ["ive", "och"],
+        ["ojra", "ov"],
+        ["chet", "ke"],
+        ["munn", "ple"],
+        ["khal", "has"],
+        ["v", "w"],
+        ["eken", "alk"],
+        ["inna", "irl"],
+        ["y", "ia"],
+        ["edt", "t"],
+        ["au", "ä"],
+        ["u", "ü"],
+        ["ai", "ey"],
+        ["oo", "ou"],
+        ["scür", "ss"],
+        ["craig", "Deo"],
+        ["itar", "ot"],
+        ["ahne", "ea"],
+        ["unoi", "ing"],
+        ["cyz", "sh"],
+        ["anu", "af"],
+        ["ese", "is"],
+        ["anai", "on"],
+        ["eeiu", "ei"],
+        ["euw", "ough"],
+        ["dah", "th"],
+        ["lska", "ll"],
+        ["ïkk", "ial"],
+        ["lik", "ly"],
+        ["eiro", "er"],
+        ["can", "cö"],
+        ["ph", "uik"],
+        ["andann", "end"],
+        ["thoal", "so"],
+        ["endenn", "and"]
+      ];
+
+      // Perform reverse replacements
+      for (var i = 0; i < reverseReplacements.length; i++) {
+        var pattern = reverseReplacements[i][0];
+        var replacement = reverseReplacements[i][1];
+        var regex = new RegExp(pattern, "g");
+
+        userInput = userInput.replace(regex, replacement);
+      }
+
+      // Display the original text
+      document.getElementById("output").textContent = userInput;
+    }
+  </script>
+</head>
+
+<body>
+  <label for="userInput">Enter text:</label>
+  <input type="text" id="userInput">
+  <button onclick="customTranslate()">Translate</button>
+
+  <p id="output"></p>
+</body>
+
+</html>
